@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "clases": "file:clases"
+    "clases": "file:clases",
+    "express": "^5.2.1",
+    "type": "module"
   }
 }
