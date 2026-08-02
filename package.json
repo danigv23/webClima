@@ -1,7 +1,8 @@
 {
+  "type": "module",
   "dependencies": {
     "clases": "file:clases",
     "express": "^5.2.1",
-    "type": "module"
+    "openmeteo": "^1.2.3"
   }
 }
