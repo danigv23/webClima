@@ -1,20 +1,12 @@
 import express from 'express';
 
+import { router } from './routes/weather.js';
+
 const app = express();
 const port = 3000;
 
 app.get('/', async (req, res) => {
-    try {
-        const api = "https://goweather.xyz/weather/Madrid";
-
-        const response = await fetch(api);
-        const data = await response.json();
-
-        res.json(data);
-
-    } catch (error) {
-        res.status(500).send(error.message);
-    }
+    res.send("Hola fasdfasdfsd");
 });
 
 app.listen(port, () => {
