@@ -41,3 +41,19 @@ const weatherData = {
 };
 
 console.log(weatherData)
+
+// let a = 2000;
+
+// let b = (a * 4.70) / 100;
+// let c = (a * 1.60) / 100;
+// let d = (a * 0.10) / 100;
+// let e = (a * 0.15) / 100;
+// let f = (a * 2) / 100;
+
+// console.log(b);
+// console.log(c);
+// console.log(d);
+// console.log(e);
+// console.log(f);
+
+// console.log(a - b - c - d - e - f)

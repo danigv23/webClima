@@ -1,9 +1,8 @@
 import express from "express";
+import lol from "../controllers/lolete.js";
 
 const router = express.Router();
 
-router.get('/lolazo', function (req, res) {
-    res.send('hello mariconazo');
-});
+router.get("/tiempo", lol);
 
 export default router;
