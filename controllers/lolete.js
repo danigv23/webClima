@@ -1,5 +1,5 @@
 let lol = (req, res) => {
-    console.log("lolarsdfasdf");
+    console.log(req);
     res.send("funciona")
 };
 
