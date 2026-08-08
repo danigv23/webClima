@@ -1,6 +1,6 @@
 let lol = (req, res) => {
-    console.log(req);
-    res.send("funciona")
+    console.dir(req);
+    res.send("works");
 };
 
 export default lol;
