@@ -1,13 +1,15 @@
 import express from 'express';
 import path from 'node:path';
-import router from './routes/weather.js';
+
+import routerLocation from './routes/locationRoute.js';
+import routerWheather from './routes/weatherRoute.js';
 
 const app = express();
 const port = 3000;
 
 app.use(express.static('public'));
 
-app.use("/", router);
+app.use("/location", routerLocation);
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);

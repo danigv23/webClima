@@ -1,5 +1,5 @@
 let lol = (req, res) => {
-    console.dir(req);
+    console.log(req.query);
     res.send("works");
 };
 
