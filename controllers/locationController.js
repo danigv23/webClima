@@ -77,8 +77,41 @@ const PAISES = {
     "zambia": ["ZM", 83]
 };
 
-const showLocationsData = (req, res) => {
+function formattedUserData(reqQuery) {
+    let userData = [];
+    userData.push(reqQuery.ciudad);
 
+    for (const [key, values] of Object.entries(reqQuery)) {
+        if (key == "pais") userData.push(PAISES[values.toLowerCase()][0]);
+    };
+
+    console.log(userData);
+
+    return userData;
+};
+
+function locationsData(userData) {
+    const params = {
+        name: userData[0],
+        count: 10,
+        language: "es",
+        format: "json",
+        countryCode: userData[1],
+    };
+
+    const filteredParams = Object.fromEntries((Object.entries(params))
+        .filter(([key, value]) => value !== undefined));
+
+    console.log(filteredParams);
+
+    return fetch(`${baseURL}search?${new URLSearchParams(filteredParams)}`)
+        .then((response) => {
+            if (!response.ok) throw new Error(`Error API ${response.status}`);
+            return response.json();
+        });
+};
+
+const showLocationsData = (req, res) => {
     try {
         const userData = formattedUserData(req.query);
 
@@ -91,34 +124,6 @@ const showLocationsData = (req, res) => {
     } catch (error) {
         res.status(400).send({ error: error.message });
     };
-};
-
-function formattedUserData(reqBody) {
-    const userCountry = reqBody.pais.toLowerCase();
-    const userCity = reqBody.ciudad;
-
-    const infoCountry = PAISES[userCountry];
-    console.log("info" + infoCountry);
-    // if (!infoCountry) throw new Error(`País no encontrado: ${userCountry}`)
-    // console.log(infoCountry[0]);
-
-    return [userCity, infoCountry[0]];
-};
-
-function locationsData(userData) {
-    const searchParms = new URLSearchParams({
-        name: userData[0],
-        count: 10,
-        language: "es",
-        format: "json",
-        countryCode: userData[1],
-    });
-
-    return fetch(`${baseURL}search?${searchParms}`)
-        .then((response) => {
-            if (!response.ok) throw new Error(`Error API ${response.status}`)
-            return response.json();
-        });
 };
 
 export default showLocationsData;

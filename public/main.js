@@ -3,10 +3,19 @@ const formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const ciudad = formulario.ciudad.value;
-    const pais = formulario.pais.value;
+    const params = {
+        ciudad: formulario.ciudad.value,
+        pais: formulario.pais.value,
+    };
 
-    const response = await fetch(`/location?ciudad=${ciudad}&pais=${pais}`);
+    // console.log(params);
+
+    const filteredParams = Object.fromEntries((Object.entries(params))
+        .filter(([key, value]) => value !== ""));
+
+    // console.log(filteredParams);
+
+    const response = await fetch(`/location?${new URLSearchParams(filteredParams)}`);
     const data = await response.json();
 
     console.log(data);
