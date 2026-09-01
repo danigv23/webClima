@@ -85,8 +85,6 @@ function formattedUserData(reqQuery) {
         if (key == "pais") userData.push(PAISES[values.toLowerCase()][0]);
     };
 
-    console.log(userData);
-
     return userData;
 };
 
@@ -102,7 +100,6 @@ function locationsData(userData) {
     const filteredParams = Object.fromEntries((Object.entries(params))
         .filter(([key, value]) => value !== undefined));
 
-    console.log(filteredParams);
 
     return fetch(`${baseURL}search?${new URLSearchParams(filteredParams)}`)
         .then((response) => {

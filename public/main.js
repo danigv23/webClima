@@ -1,11 +1,20 @@
-const formulario = document.getElementById("formulario");
-
 function showLocationsHTML(dataLocations) {
-    const main = document.querySelector("main");
+    const principal = document.querySelector("#principal");
+    const formulario = document.getElementById("formulario");
+
+    const divOpciones = document.createElement("div");
+    // divOpciones.id = "divOpciones";
     const tabla = document.createElement("table");
+    tabla.id = "opCiudades";
+
+    const elementImgClose = document.createElement("img");
+    elementImgClose.alt = "Ilustracion cerrar";
+    elementImgClose.src = "../SVGs/cruz.svg";
+    elementImgClose.className = "close";
+
+    principal.append(elementImgClose, tabla)
 
     const atributos = document.createElement("thead");
-    const fila1 = document.createElement("tr");
     const elemento1 = document.createElement("td");
     const elemento2 = document.createElement("td");
     const elemento3 = document.createElement("td");
@@ -20,13 +29,12 @@ function showLocationsHTML(dataLocations) {
     elemento5.textContent = "Latitud";
     elemento6.textContent = "Zona horaria";
 
-    fila1.append(elemento1, elemento2, elemento3, elemento4, elemento5, elemento6);
-    atributos.appendChild(fila1);
+    atributos.append(elemento1, elemento2, elemento3, elemento4, elemento5, elemento6);
     tabla.appendChild(atributos);
 
     for (const location of dataLocations) {
-        console.log(location.country);
         const filaNueva = document.createElement("tr");
+        filaNueva.className = "op";
 
         const bandera = document.createElement("th");
         const pais = document.createElement("td");
@@ -34,6 +42,9 @@ function showLocationsHTML(dataLocations) {
         const longitud = document.createElement("td");
         const latitude = document.createElement("td");
         const timezone = document.createElement("td");
+
+        longitud.id = "lon";
+        latitude.id = "lat";
 
         pais.innerText = location.country;
         nombre.textContent = location.name;
@@ -45,10 +56,13 @@ function showLocationsHTML(dataLocations) {
         tabla.appendChild(filaNueva);
     };
 
-    main.append(tabla);
+    formulario.classList.add("oculto");
+    principal.className = "opTabla"
+    principal.append(tabla);
 };
 
-
+const formulario = document.getElementById("formulario");
+const divPricipal = document.getElementById("principal")
 
 formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -58,18 +72,23 @@ formulario.addEventListener("submit", async (e) => {
         pais: formulario.pais.value,
     };
 
-    // console.log(params);
-
     const filteredParams = Object.fromEntries((Object.entries(params))
         .filter(([key, value]) => value !== ""));
-
-    // console.log(filteredParams);
 
     const response = await fetch(`/location?${new URLSearchParams(filteredParams)}`);
     const data = await response.json();
 
-    console.log(data.results)
     showLocationsHTML(data.results);
 });
 
 
+
+divPricipal.addEventListener("click", (event) => {
+    const opSelec = event.target.closest(".op");
+
+    const lon = opSelec.querySelector("#lon").innerHTML;
+    const lat = opSelec.querySelector("#lat").innerHTML;
+
+    console.log(lon, lat);
+
+});

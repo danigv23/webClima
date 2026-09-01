@@ -6,106 +6,110 @@
 
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>MiTiempo</title>
 </head>
 
 <body>
     <main>
-
         <h1>Tu web del clima mas confiable</h1>
 
         <h3>Consulta todo tipo de condiciones climatologicas de la ciudad que desees.</h3>
 
-        <form id="formulario">
-            <label for="ciudad">
-                <input type="text" name="ciudad" placeholder="Ciudad">
-            </label>
-            <label for="pais">
-                <input list="paises" name="pais" placeholder="País" id="opPaises">
-            </label>
+        <div id="principal" class="form">
 
-            <datalist id="paises">
-                <option value="Andorra"></option>
-                <option value="Emiratos Arabes"></option>
-                <option value="Albania"></option>
-                <option value="Antartida"></option>
-                <option value="Argentina"></option>
-                <option value="Austria"></option>
-                <option value="Australia"></option>
-                <option value="Bangladesh"></option>
-                <option value="Belgica"></option>
-                <option value="Bulgaria"></option>
-                <option value="Bolivia"></option>
-                <option value="Brasil"></option>
-                <option value="Bielorusia"></option>
-                <option value="Canada"></option>
-                <option value="Republica del Congo"></option>
-                <option value="Suiza"></option>
-                <option value="Chile"></option>
-                <option value="China"></option>
-                <option value="Colombia"></option>
-                <option value="Cuba"></option>
-                <option value="Republica Checa"></option>
-                <option value="Alemania"></option>
-                <option value="Dinamarca"></option>
-                <option value="Republica Dominicana"></option>
-                <option value="Algeria"></option>
-                <option value="Ecuador"></option>
-                <option value="Egipto"></option>
-                <option value="España"></option>
-                <option value="Finlandia"></option>
-                <option value="Francia"></option>
-                <option value="Gran Bretaña"></option>
-                <option value="Ghana"></option>
-                <option value="Grecia"></option>
-                <option value="Croacia"></option>
-                <option value="Hungria"></option>
-                <option value="Indonesia"></option>
-                <option value="India"></option>
-                <option value="Irak"></option>
-                <option value="Italia"></option>
-                <option value="Jamaica"></option>
-                <option value="Japon"></option>
-                <option value="Kenia"></option>
-                <option value="Marruecos"></option>
-                <option value="Monaco"></option>
-                <option value="Mongolia"></option>
-                <option value="Malta"></option>
-                <option value="Mauritania"></option>
-                <option value="Mexico"></option>
-                <option value="Malasia"></option>
-                <option value="Nigeria"></option>
-                <option value="Nicaragua"></option>
-                <option value="Holanda"></option>
-                <option value="Noruega"></option>
-                <option value="Panama"></option>
-                <option value="Peru"></option>
-                <option value="Polonia"></option>
-                <option value="Puerto Rico"></option>
-                <option value="Portugal"></option>
-                <option value="Qatar"></option>
-                <option value="Serbia"></option>
-                <option value="Rusia"></option>
-                <option value="Arabia Saudita"></option>
-                <option value="Suecia"></option>
-                <option value="Eslovenia"></option>
-                <option value="Senegal"></option>
-                <option value="Thailandia"></option>
-                <option value="Tanzania"></option>
-                <option value="Ucrania"></option>
-                <option value="Estados Unidos"></option>
-                <option value="Uruguay"></option>
-                <option value="Venezuela"></option>
-                <option value="Yemen"></option>
-                <option value="Sud Africa"></option>
-                <option value="Zambia"></option>
-            </datalist>
+            <h2>Seleciona la ciudad.</Select></h2>
 
-            <label for="enviar">
-                <input type="submit" placeholder="Enviar" id="botEnviar">
-            </label>
+            <form id="formulario">
+                <label for="ciudad">
+                    <input type="text" name="ciudad" placeholder="Ciudad">
+                </label>
+                <label for="pais">
+                    <input list="paises" name="pais" placeholder="País" id="opPaises">
+                </label>
 
-        </form>
+                <datalist id="paises">
+                    <option value="Andorra"></option>
+                    <option value="Emiratos Arabes"></option>
+                    <option value="Albania"></option>
+                    <option value="Antartida"></option>
+                    <option value="Argentina"></option>
+                    <option value="Austria"></option>
+                    <option value="Australia"></option>
+                    <option value="Bangladesh"></option>
+                    <option value="Belgica"></option>
+                    <option value="Bulgaria"></option>
+                    <option value="Bolivia"></option>
+                    <option value="Brasil"></option>
+                    <option value="Bielorusia"></option>
+                    <option value="Canada"></option>
+                    <option value="Republica del Congo"></option>
+                    <option value="Suiza"></option>
+                    <option value="Chile"></option>
+                    <option value="China"></option>
+                    <option value="Colombia"></option>
+                    <option value="Cuba"></option>
+                    <option value="Republica Checa"></option>
+                    <option value="Alemania"></option>
+                    <option value="Dinamarca"></option>
+                    <option value="Republica Dominicana"></option>
+                    <option value="Algeria"></option>
+                    <option value="Ecuador"></option>
+                    <option value="Egipto"></option>
+                    <option value="España"></option>
+                    <option value="Finlandia"></option>
+                    <option value="Francia"></option>
+                    <option value="Gran Bretaña"></option>
+                    <option value="Ghana"></option>
+                    <option value="Grecia"></option>
+                    <option value="Croacia"></option>
+                    <option value="Hungria"></option>
+                    <option value="Indonesia"></option>
+                    <option value="India"></option>
+                    <option value="Irak"></option>
+                    <option value="Italia"></option>
+                    <option value="Jamaica"></option>
+                    <option value="Japon"></option>
+                    <option value="Kenia"></option>
+                    <option value="Marruecos"></option>
+                    <option value="Monaco"></option>
+                    <option value="Mongolia"></option>
+                    <option value="Malta"></option>
+                    <option value="Mauritania"></option>
+                    <option value="Mexico"></option>
+                    <option value="Malasia"></option>
+                    <option value="Nigeria"></option>
+                    <option value="Nicaragua"></option>
+                    <option value="Holanda"></option>
+                    <option value="Noruega"></option>
+                    <option value="Panama"></option>
+                    <option value="Peru"></option>
+                    <option value="Polonia"></option>
+                    <option value="Puerto Rico"></option>
+                    <option value="Portugal"></option>
+                    <option value="Qatar"></option>
+                    <option value="Serbia"></option>
+                    <option value="Rusia"></option>
+                    <option value="Arabia Saudita"></option>
+                    <option value="Suecia"></option>
+                    <option value="Eslovenia"></option>
+                    <option value="Senegal"></option>
+                    <option value="Thailandia"></option>
+                    <option value="Tanzania"></option>
+                    <option value="Ucrania"></option>
+                    <option value="Estados Unidos"></option>
+                    <option value="Uruguay"></option>
+                    <option value="Venezuela"></option>
+                    <option value="Yemen"></option>
+                    <option value="Sud Africa"></option>
+                    <option value="Zambia"></option>
+                </datalist>
+
+                <label for="enviar">
+                    <input type="submit" placeholder="Enviar" id="botEnviar">
+                </label>
+
+            </form>
+        </div>
     </main>
 </body>
 

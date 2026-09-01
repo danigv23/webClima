@@ -8,16 +8,23 @@ main {
     height: 100dvh;
     display: flex;
     flex-direction: column;
-    align-content: center;
     align-items: center;
-    align-self: center;
-    justify-self: center;
     justify-content: center;
-    justify-items: center;
+}
+
+#principal {
+    padding: 35px;
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.144);
+    border: solid 3px black;
 }
 
 form {
-    margin: 50px;
+    margin: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 35px;
@@ -34,4 +41,53 @@ input {
 #botEnviar {
     cursor: pointer;
     grid-column: 1 / -1;
+}
+
+#divOpciones {
+    background-color: white;
+    border-radius: 26px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+tr {
+    cursor: pointer;
+}
+
+#opCiudades {
+    padding: 10px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    font-size: 15px;
+    padding: 15px;
+    font-weight: 300;
+}
+
+.oculto {
+    display: none;
+}
+
+.close {
+    width: 60px;
+    height: 60px;
+    left: 100px;
+}
+
+thead {
+    background-color: rgb(119, 119, 119);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(209, 209, 209);
+}
+
+tr:hover {
+    background-color: rgb(252, 91, 185);
 }
